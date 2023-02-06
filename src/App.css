@@ -1,0 +1,30 @@
+:root {
+  --ff-heading: 'Caveat Brush', cursive;
+  --c-white: #e9ecef;
+  --c-black: #343a40;
+  --c-grey: #6c757d;
+  --c-blue: #9bf6ff;
+  --c-red: #ffadad;
+  --c-orange: #ffd6a5;
+  --c-yellow: #fdffb6;
+  --c-green: #caffbf;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--c-white);
+  color: var(--c-black);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
