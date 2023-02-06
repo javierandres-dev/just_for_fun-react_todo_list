@@ -20,14 +20,17 @@
   overflow-y: auto;
   background-color: var(--c-white);
   padding: 4rem 2rem 2rem;
+  border-radius: 1rem 0 1rem 1rem;
 }
 .modal-close {
   position: absolute;
   top: 0;
   right: 0;
   padding: 1rem;
-  border: 1px solid red;
 }
 .modal-content {
-  border: 1px solid green;
+  padding: 2rem 1rem;
+  border: 1px solid var(--c-blue);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 0 var(--c-blue);
 }

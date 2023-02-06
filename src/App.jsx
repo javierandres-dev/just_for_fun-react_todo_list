@@ -6,13 +6,14 @@ import { Footer } from './components/Footer';
 import { Board } from './components/Board';
 import { Button } from './components/Button';
 import { Modal } from './components/Modal';
+import { Form } from './components/Form';
 
 const App = () => {
   const [isOpenModal, openModal, closeModal] = useModal(false);
   const [modal, setModal] = useState(null);
 
   const handleModalAddTodo = () => {
-    setModal('add to do...');
+    setModal(<Form />);
     openModal();
   };
 
