@@ -1,9 +1,8 @@
 import './App.css';
 import { useEffect, useReducer, useState } from 'react';
-import { initialTodo, initialTodos } from './helpers/constants';
 import { TodosContext } from './contexts/TodosContext';
-import { todoReducer } from './reducers/todoReducer';
-import { todosReducer } from './reducers/todosReducer';
+import { initialTodo, todoReducer } from './reducers/todoReducer';
+import { initialTodos, todosReducer } from './reducers/todosReducer';
 import { useModal } from './hooks/useModal';
 import { Title } from './components/Title';
 import { Footer } from './components/Footer';
@@ -22,15 +21,20 @@ const App = () => {
     if (localStorage.getItem('To-do list')) console.log('previous list...');
   }, []);
 
+  useEffect(() => {
+    console.log('todo:', todo);
+    console.log('todos:', todos);
+  }, [todo, todos]);
+
   const handleModalAddTodo = () => {
-    setModal(<Form />);
-    openModal();
+    setModal(<Form openModal={openModal} closeModal={closeModal} />);
   };
 
   return (
-    <TodosContext.Provider value={[todo, todos]}>
+    <TodosContext.Provider value={[todo, dispatchTodo, todos, dispatchTodos]}>
       <Title />
       <Button
+        type='button'
         styles={'btn add-todo-btn'}
         content={'Add task'}
         handleClick={handleModalAddTodo}
